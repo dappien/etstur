@@ -1,0 +1,37 @@
+.events{
+    position: relative;
+    top: 0;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+.events__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    h2{
+        font-size: 32px;
+        margin: 0;
+    }
+    div{
+        display: flex ;
+        align-items: center;
+
+        h3{
+            font-size: 16px;
+            margin: 0;
+            font-weight: 400;
+            margin-left: 20px;
+        }
+    }
+}
+
+.events__grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+}

@@ -1,8 +1,9 @@
 import React from 'react'
+import styles from './footer.module.scss'
 
 function index() {
   return (
-    <div>index</div>
+    <div className={styles['footer']}>index</div>
   )
 }
 
