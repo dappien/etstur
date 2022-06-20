@@ -51,16 +51,15 @@
 .homepage__section2{
     display: flex;
     align-items: flex-start;
-    width: 80%;
     height: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 60px;
-    grid-row-gap: 0px;
-    margin-left: 10%;
+    justify-content: space-between;   
+    margin-top: 100px;
     div{
         flex:1 0 0 ;
     }
 }
 
+.homepage__body{
+    width: 80%;
+    margin-left: 10%;
+}

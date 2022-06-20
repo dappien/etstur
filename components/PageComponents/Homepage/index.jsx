@@ -1,12 +1,15 @@
 import React from "react";
 import styles from "./homepage.module.scss";
 import Image from "next/image";
-import Filter from "./filter";
-import Events from "./events/events";
-import PastEvents from './pastEvents'
-import Categories from "./categories/categories";
+import Filter from "./Filter/filter";
+import Events from "./UpcomingEvents/events";
+import PastEvents from './PastEvents'
+import Categories from "./Categories/categoryWrapper";
 
-function Homepage() {
+
+
+export default function Homepage({events,upcomingEvents,finishedEvents,continuingEvents}) {
+
   return (
     <div className={styles["homepage"]}>
       <div className={styles["homepage__section"]}>
@@ -30,22 +33,25 @@ function Homepage() {
         </div>
         <Filter />
       </div>
-    
-      <Events/>
-      <div className={styles['homepage__section2']}>
-        <div>
-          <PastEvents/>
-        </div>
-        <div>
-          <Categories/>
-          <Categories/>
-          <Categories/>
+      <div className={styles['homepage__body']}>
+        <Events events={events} upcomingEvents={upcomingEvents} />
+        <div className={styles['homepage__section2']}>
+          <div>
+            <PastEvents finishedEvents={finishedEvents} continuingEvents={continuingEvents}/>
+          </div>
+          <div>
+            <Categories events={events}/>
+         
+          </div>
         </div>
       </div>
-      
+     
+    
 
     </div>
   );
 }
 
-export default Homepage;
+
+
+

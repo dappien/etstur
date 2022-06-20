@@ -5,7 +5,8 @@ const nextConfig = {
     domains: [
       'res.cloudinary.com',
       'ipfs.infura.io',
-      'flagcdn.com'
+      'flagcdn.com',
+      'fakestoreapi.com'
     ],
 },
 }

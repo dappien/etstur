@@ -7,11 +7,18 @@
     padding: 20px;
     z-index: 9999;
     position: absolute;
-
     h2{
         font-size: 20px;
         margin-left: 40px;
         font-family: $josefin-sans;
-        
+        cursor: pointer;
+        transition: all 0.4s;
+        &:hover{
+            color: #d33371;
+        }
     }
+}
+
+.navbar--hidden{
+    background-color: red;
 }

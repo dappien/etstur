@@ -1,7 +1,9 @@
 import React from 'react'
 import styles from './events.module.scss'
 import EventCard from './eventCard'
-function Events() {
+
+function Events({events,upcomingEvents}) {
+  console.log(events)
   return (
     <div className={styles['events']}>
       <div className={styles['events__header']}>
@@ -13,11 +15,18 @@ function Events() {
         </div>
       </div>
       <div className={styles['events__grid']}>
-        <EventCard/>
-        <EventCard/>
-        <EventCard/>
-        <EventCard/>
-        <EventCard/>
+       
+        {upcomingEvents.map((event,id)=>(
+          <EventCard 
+            key={id} 
+            id={id}
+            title={event.title}
+            startingDate={event.startingDate}
+            finishingDate={event.finishingDate}
+            category={event.category}
+            banner={event.banner}
+          />
+        ))}
       </div>
     </div>
   )

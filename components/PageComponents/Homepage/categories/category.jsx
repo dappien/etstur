@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import styles from './category.module.scss'
-function Category() {
+function Category({event}) {
   return (
     <div className={styles['category']}>
         <Image
@@ -11,6 +11,7 @@ function Category() {
         />
         <div>
             <h4>Fethiye Ölüdeniz Yamaç Paraşütü Yarışması</h4>
+            <h2>{event.title}</h2>
         </div>
     </div>
   )

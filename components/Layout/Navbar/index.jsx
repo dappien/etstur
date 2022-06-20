@@ -1,10 +1,12 @@
-import React from 'react'
+import React , {useState,useEffect} from 'react'
 import Image from 'next/image'
 import styles from './navbar.module.scss'
 
 function Navbar() {
+
+
   return (
-    <div className={styles.navbar}>
+    <div className={styles['navbar']}>
       <Image 
         src="https://res.cloudinary.com/droheqpxn/image/upload/v1655606264/etstur/logo_g04c5g.png"
         width={60}
