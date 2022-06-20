@@ -10,10 +10,11 @@ function Navbar() {
           src="https://res.cloudinary.com/droheqpxn/image/upload/v1655606264/etstur/logo_g04c5g.png"
           width={60}
           height={60}
+          className={styles['navbar__logo']}
         />
       </Link>
 
-      <Link href="/home">
+      <Link href="/">
         <h2>Home</h2>
       </Link>
 
