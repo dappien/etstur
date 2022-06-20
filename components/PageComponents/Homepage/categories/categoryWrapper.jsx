@@ -17,12 +17,12 @@ function Categories({events}) {
 
   return (
     <div className={styles['categories']}>
-      <h2>asdasd</h2>           
+      <h2>Sports</h2>           
         <div className={styles['categories__block']}>
             <Category event={sports[0]}/>
             <Category event={theatres[0]}/>
         </div>
-        <h2>asdasd</h2>
+        <h2>Theatre</h2>
         <div className={styles['categories__block']}>
             <Category event={sports[0]}/>
             <Category event={theatres[0]}/>

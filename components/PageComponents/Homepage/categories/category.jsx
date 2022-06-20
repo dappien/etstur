@@ -5,7 +5,7 @@ function Category({event}) {
   return (
     <div className={styles['category']}>
         <Image
-            src="https://res.cloudinary.com/droheqpxn/image/upload/v1655614566/etstur/2022-turkey-abroad-concert-calendar_ov8jb7.jpg"
+            src={event.banner}
             width={380}
             height={240}
         />

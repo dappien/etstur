@@ -1,0 +1,14 @@
+.venues{
+    position: relative;
+    min-height: 100vh;
+    max-width: 80%;
+    margin-left: 10%;
+}
+
+.venuesGrid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+    
+}
