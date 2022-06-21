@@ -2,9 +2,9 @@ import React from "react";
 import styles from "./homepage.module.scss";
 import Image from "next/image";
 import Filter from "./Filter/filter";
-import Events from "./UpcomingEvents/events";
+import Events from "./UpcomingEvents";
 import PastEvents from './PastEvents'
-import Categories from "./Categories/categoryWrapper";
+import Categories from "./Categories";
 
 
 

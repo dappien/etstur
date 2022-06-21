@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './events.module.scss'
-import EventCard from './eventCard'
+import EventCard from '../../../Cards/EventCard'
 
 function Events({events,upcomingEvents}) {
   console.log(events)
@@ -21,6 +21,7 @@ function Events({events,upcomingEvents}) {
             key={id} 
             id={id}
             title={event.title}
+            url={event.url}
             startingDate={event.startingDate}
             finishingDate={event.finishingDate}
             category={event.category}

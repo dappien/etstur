@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styles from './pastEvents.module.scss'
-import SingleEvent from './singleEvent'
+import SingleEvent from '../../../Cards/EventCardHorizontal'
 
 function index({finishedEvents,continuingEvents}) {
   const [show,setShow]=useState(0);

@@ -1,27 +1,26 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import Page from '../../components/Layout/Page';
-import SingleVenuePage from '../../components/PageComponents/SingleVenuePage'
+import SingleEventPage from '../../components/PageComponents/SingleEventPage'
 
-function SingleVenue({venues,events}) {
+function SingleEvent({events,venues}) {
   const router = useRouter();
   const { url } = router.query;
-  console.log(venues?.[0].city)
  
   return (
     <Page style="fullWidth">
-      <SingleVenuePage venues={venues} events={events}/>
+      <SingleEventPage  events={events} venues={venues}/>
     </Page>
   )
 }
 
-export default SingleVenue
+export default SingleEvent
 
 export async function getStaticPaths() {
   return {
     paths: [
       // String variant:
-      '/venues/first-venue',
+      '/events/first-venue',
       // Object variant:
       { params: { url: 'second-venue' } },
     ],
@@ -30,15 +29,16 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps = async ({params}) => {
-  const res = await fetch('https://dappien-events-api.herokuapp.com/events');
-  const resVenues = await fetch(`https://dappien-events-api.herokuapp.com/venues?venueCode=${params.url}`)
+  const res = await fetch(`https://dappien-events-api.herokuapp.com/events?url=${params.url}`);
+  const resVenues = await fetch('https://dappien-events-api.herokuapp.com/venues');
   const dataVenues = await resVenues.json();
   const data = await res.json();
   return {
     props:{
-      venues:dataVenues,
-      events:data
+      events:data,
+      venues:dataVenues
     }
   }
 }
+
 

@@ -8,6 +8,9 @@ import Page from '../../components/Layout/Page'
 function Search({events,venues}) {
   const { query } = useRouter();
   const queryLowerCase = query?.q?.toLowerCase();
+  const cityQuery = query?.city?.toLowerCase();
+  const minimumPriceQuery = parseInt(query?.min);
+  const maximumPriceQuery = parseInt(query?.max);
   const eventList = [];
   const venueList = [];
 
@@ -26,7 +29,13 @@ function Search({events,venues}) {
 
   return (
     <Page style="fullWidth">
-      <SearchPage events={eventList} venues={venueList} query={queryLowerCase}/>
+      {/* <SearchPage events={eventList} venues={venueList} query={queryLowerCase}/> */}
+      <div>
+        <h2>cityQuery:{cityQuery}</h2>
+        <h2> minimumPriceQuery:{minimumPriceQuery}</h2>
+        <h2>maxiumumPriceQuery :{maximumPriceQuery}</h2>
+      </div>
+  
     </Page>
   )
 }

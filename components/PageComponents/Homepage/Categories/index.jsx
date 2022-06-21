@@ -1,6 +1,6 @@
 import React from 'react'
-import Category from './category'
-import styles from './categoryWrapper.module.scss'
+import Category from '../../../Cards/CategoryCard'
+import styles from './categories.module.scss'
 
 function Categories({events}) {
   const sports = [];

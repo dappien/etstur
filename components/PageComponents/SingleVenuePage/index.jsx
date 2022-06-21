@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import styles from './singlevenuepage.module.scss'
-import RelatedEvents from './relatedEvents'
+import RelatedEvents from '../../Cards/RelatedEventsCard'
 
 function index({venues,events}) {
 
