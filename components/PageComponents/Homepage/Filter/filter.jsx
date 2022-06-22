@@ -71,6 +71,7 @@ function Filter() {
                 placeholder="min"
                 type="number"
                 onChange={(e) => setMinimumPrice(e.target.value)}
+                min="0"
               />
               <input
                 placeholder="max"

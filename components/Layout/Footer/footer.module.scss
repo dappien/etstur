@@ -19,6 +19,10 @@
         padding-right: 5%;
         height: 180px;
     }
+    @include devices(tablet) {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
     div{
         h3{
             margin: 0;

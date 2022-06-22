@@ -5,6 +5,8 @@ import EventCard from '../../Cards/EventCard';
 function index({events,venues}) {
   return (
     <div className={styles['events']}>
+        <h1>Events</h1>
+        <div className={styles['events__grid']}>
         {events.map((event,id)=>(
              <EventCard 
              key={id} 
@@ -17,6 +19,7 @@ function index({events,venues}) {
              banner={event.banner}
            />
         ))}
+        </div>
     </div>
   )
 }

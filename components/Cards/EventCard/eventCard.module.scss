@@ -1,3 +1,5 @@
+@import "../../../styles/constants";
+
 .eventCard{
     width: 350px;
     height: 400px;
@@ -8,11 +10,42 @@
     flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     transition: all 0.4s;
+    @include devices(tablet) {
+        width: 320px;
+    height: 360px;
+     }
+    cursor: pointer;
+    &:hover{
+        transform: scale(1.05);
+    }
+    
+}
+
+.eventCard__end{
+    margin: 0;
+}
+
+.eventCardEnd{
+    width: 350px;
+    height: 400px;
+    background: rgb(236,233,233);
+    background: linear-gradient(52deg, rgb(214, 214, 214) 0%, rgba(122, 122, 122, 0.8) 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: all 0.4s;
+    @include devices(tablet) {
+        width: 320px;
+    height: 360px;
+     }
     cursor: pointer;
     &:hover{
         transform: scale(1.05);
     }
 }
+
 
 .eventCard--top{
     height: 100%;

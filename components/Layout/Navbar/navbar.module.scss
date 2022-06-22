@@ -44,7 +44,7 @@
     width: 100%;
     z-index: 9999;
     position: relative;
-    background-color: #000000;
+    background-color: #d3d3d3;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     align-items: center;
@@ -52,6 +52,10 @@
     div{
         margin-left: 10%;
         margin-right: 10%;
+        @include devices(tablet) {
+            margin-left: 0;
+            margin-right: 0;
+        }
         display: flex;
         align-items: center;
         h2{
@@ -60,6 +64,9 @@
             font-family: $josefin-sans;
             cursor: pointer;
             transition: all 0.4s;
+            @include devices(tablet) {
+                font-size: 16px;
+             }
             &:hover{
                 color: #d33371;
             }
@@ -109,7 +116,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    background-color: transparent;
+    background-color: #d3d3d3;
     justify-content: space-between;
     
 }

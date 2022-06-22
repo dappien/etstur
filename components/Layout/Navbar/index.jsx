@@ -20,16 +20,26 @@ function Navbar({style}) {
     <div className={styles[(style==="fullWidth") ? 'navbar--fullWidth' : 'navbar']}>
       <div className={styles['navbar__elements']}>
         <Link href="/">
+          {size.width > 1024 ? 
           <Image 
             src="https://res.cloudinary.com/droheqpxn/image/upload/v1655606264/etstur/logo_g04c5g.png"
             width={60}
             height={60}
             className={styles['navbar__logo']}
-          />
+          />  
+          :
+          <Image 
+            src="https://res.cloudinary.com/droheqpxn/image/upload/v1655606264/etstur/logo_g04c5g.png"
+            width={40}
+            height={40}
+            className={styles['navbar__logo']}
+          />  
+          }
+         
         </Link>
 
         <Link href="/">
-          <h2>Home {size.width}</h2>
+          <h2>Home</h2>
         </Link>
 
         <Link href="/events">
