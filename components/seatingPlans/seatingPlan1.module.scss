@@ -1,3 +1,4 @@
+@import "../../styles/constants";
 .parent{
     display: flex;
     align-items: flex-start;
@@ -21,6 +22,10 @@
     justify-content: center;
     cursor: pointer;
     transition: all 0.4s;
+    @include devices(phone) {
+      width: 80px;
+      height: 160px;
+    }
     &:hover{
         background-color: #c50b18;
     }
@@ -35,6 +40,10 @@
     justify-content: center;
     cursor: pointer;
     transition: all 0.4s;
+    @include devices(phone) {
+        width: 80px;
+        height: 80px;
+    }
     &:hover{
         background-color: #c50b18;
     }
@@ -49,6 +58,10 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    @include devices(phone) {
+        width: 160px;
+        height: 80px;
+    }
 }
 
 .div4{
@@ -60,6 +73,10 @@
     justify-content: center;
     cursor: pointer;
     transition: all 0.4s;
+    @include devices(phone) {
+        width: 160px;
+        height: 160px;
+    }
     &:hover{
         background-color: #c50b18;
     }
@@ -75,6 +92,10 @@
     justify-content: center;
     cursor: pointer;
     transition: all 0.4s;
+    @include devices(phone) {
+        width: 80px;
+        height: 160px;
+    }
     &:hover{
         background-color: #c50b18;
     }
@@ -89,6 +110,10 @@
     justify-content: center;
     cursor: pointer;
     transition: all 0.4s;
+    @include devices(phone) {
+        width: 80px;
+        height: 80px;
+    }
     &:hover{
         background-color: #c50b18;
     }

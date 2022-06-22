@@ -29,6 +29,9 @@
         padding: 0;
         line-height: 40px;
         margin-top: 15px;
+        @include devices(phone) {
+            margin-top: 0px;
+        }
     }
     h3{
         font-weight: 600;
@@ -88,7 +91,12 @@
         font-size: 80px;
         line-height: 80px;
         margin-right: 20px;
-         color: rgb(122, 122, 122);
+        color: rgb(122, 122, 122);
+        @include devices(phone) {
+            font-size: 60px;
+            line-height: 60px;
+            margin-right: 0px;
+        }
     }
     div{
         display: flex;
@@ -102,6 +110,10 @@
             margin: 0;
             color: rgb(122, 122, 122);
             font-weight: 500;
+            @include devices(phone) {
+                font-size: 12px;
+                line-height:15px;
+            }
         }
     }
     display: flex;
@@ -129,6 +141,9 @@
         margin: 0;
         padding: 5px;
         cursor: pointer;
+        @include devices(tablet) {
+            font-size: 16px;
+        }
     }
 }
 

@@ -72,7 +72,7 @@ function truncate(string,n){
             <h2 className={section==1 && styles['active']} onClick={()=>setSection(1)}>Oturma Planı</h2>
             <h2 className={section==2 && styles['active']} onClick={()=>setSection(2)}>Kurallar</h2>
         </div>
-        {section===0  &&  <iframe src={venuesList?.[0].location} width="600" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>}
+        {section===0  &&  <iframe src={venuesList?.[0].location} width={size.width > 640 ? 600 : 350} height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>}
         {section===1 &&
             <div>
                 <SeatingPlan1 ticketPrices={events?.[0].ticketPrices}  setTicketPrices={setTicketPrices}/>
