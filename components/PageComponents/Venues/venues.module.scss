@@ -1,3 +1,5 @@
+@import "../../../styles/constants";
+
 .venues{
     position: relative;
     min-height: 100vh;
@@ -15,5 +17,15 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 40px;
-    grid-row-gap: 40px;   
+    grid-row-gap: 40px;
+    @include devices(tablet) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 30px;
+        grid-row-gap: 40px;
+    }
+    @include devices(phone) {
+        grid-template-columns: repeat(1, 1fr);
+        grid-column-gap: 30px;
+        margin-bottom: 50px;
+    }   
 }

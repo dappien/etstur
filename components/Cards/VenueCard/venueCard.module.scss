@@ -1,3 +1,5 @@
+@import "../../../styles/constants";
+
 .venueCard{
     width: 350px;
     height: 400px;
@@ -8,6 +10,10 @@
     flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     transition: all 0.4s;
+    @include devices(tablet) {
+        width: 320px;
+        height: 360px;
+    }
     cursor: pointer;
     &:hover{
         transform: scale(1.05);

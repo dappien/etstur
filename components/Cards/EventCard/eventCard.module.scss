@@ -12,8 +12,8 @@
     transition: all 0.4s;
     @include devices(tablet) {
         width: 320px;
-    height: 360px;
-     }
+        height: 360px;
+    }
     cursor: pointer;
     &:hover{
         transform: scale(1.05);
