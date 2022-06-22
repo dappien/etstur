@@ -5,7 +5,7 @@ import Filter from "./Filter/filter";
 import Events from "./UpcomingEvents";
 import PastEvents from './PastEvents'
 import Categories from "./Categories";
-import Carousel from './Carousel'
+
 export default function Homepage({events,upcomingEvents,finishedEvents,continuingEvents}) {
 
   return (
@@ -35,7 +35,7 @@ export default function Homepage({events,upcomingEvents,finishedEvents,continuin
       </div>
       <div className={styles['homepage__body']}>
         <Events events={events} upcomingEvents={upcomingEvents} />
-        <Carousel />
+  
         <div className={styles['homepage__section2']}>
           <div>
             <PastEvents finishedEvents={finishedEvents} continuingEvents={continuingEvents}/>
