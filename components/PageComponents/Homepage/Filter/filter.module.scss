@@ -1,6 +1,6 @@
 .filter{
     width: 1360px;
-    height: 120px;
+    height: auto;
     top: 60px;
     z-index: 9999;
     position: relative;
@@ -12,10 +12,7 @@
     -webkit-backdrop-filter: blur( 1px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
+
 }
 
 .filter__module{
@@ -54,4 +51,28 @@
 
 .filter__iconBlock{
     margin-left: 10px;
+}
+
+.filter__moduleWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.filter__alert{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    background-color: rgb(233, 144, 144);
+    padding: 5px;
+    border: 1px solid red;
+    border-radius: 5px;
+    width: 500px;
+    h5{
+        font-size: 16px;
+        line-height: 16px;
+        color: rgb(0, 0, 0);
+        margin: 0;
+    }
 }

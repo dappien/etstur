@@ -53,9 +53,10 @@ console.log(venuesList,venues)
                         <h3>{venuesList?.[0]?.city}</h3>
                     </div>
                 </div>
-             
             </div>
         </div>
+        <iframe src={venuesList?.[0].location} width="600" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+       
         <div className={styles['singleVenuePage__bannerBlock']}>
             {/* {events?.[0].banner.map((source,id)=>(
                 <div className={styles['singleVenuePage__banner']} onClick={()=>setImage(id)}> */}

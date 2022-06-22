@@ -17,7 +17,7 @@ function venueCard({venue}) {
             </div>
             <div className={styles['venueCard--bottom']}>
                 <div>
-                    <h1>{venue.name}</h1>
+                    <h3>{venue.name}</h3>
                     <h2>{venue.city}</h2>
                 </div>
             </div>

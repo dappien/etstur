@@ -1,70 +1,144 @@
-import React, { useState } from 'react'
-import styles from './filter.module.scss'
-import { IoLocationOutline } from 'react-icons/io5'
-import { BsCalendarDate ,BsCurrencyDollar} from 'react-icons/bs'
-import { ImTree } from 'react-icons/im'
-import Button from '../../../UIElements/Button';
-import dynamic from 'next/dynamic';
+import React, { useState } from "react";
+import styles from "./filter.module.scss";
+import { IoLocationOutline } from "react-icons/io5";
+import { BsCalendarDate, BsCurrencyDollar } from "react-icons/bs";
+import { ImTree } from "react-icons/im";
+import Button from "../../../UIElements/Button";
+import dynamic from "next/dynamic";
 const Dropdown = dynamic(() => import("../../../UIElements/Dropdown"));
-import { cities } from '../../../UIElements/Dropdown/cities'
-import Link from 'next/link';
+import { cities } from "../../../UIElements/Dropdown/cities";
+import { categories } from "../../../UIElements/Dropdown/categories";
+import { useRouter } from "next/router";
+import { RiErrorWarningLine } from "react-icons/ri";
 
 function Filter() {
-const [city,setCity]=useState("Adana");
-const [minimumPrice,setMinimumPrice]=useState(0);
-const [maximumPrice,setMaximumPrice]=useState(5000)
-
+  const [city, setCity] = useState("İstanbul");
+  const [category, setCategory] = useState("All");
+  const [minimumPrice, setMinimumPrice] = useState(0);
+  const [maximumPrice, setMaximumPrice] = useState(5000);
+  const [startingDate, setStartingDate] = useState(0);
+  const [finishingDate, setFinishingDate] = useState(3202129752000);
+  const startMS = new Date(startingDate).getTime();
+  const finishMS = new Date(finishingDate).getTime();
+  const router = useRouter();
+  const [show, setShow] = useState(false);
+  const handleClick = () => {
+    if (finishingDate < startingDate) {
+      setShow(true);
+    } else {
+      router.push(
+        `/discover?city=${city}&min=${minimumPrice}&max=${maximumPrice}&sd=${startMS}&fd=${finishMS}&category=${category}`
+      );
+    }
+  };
   return (
     <div className={styles.filter}>
-        <div className={styles['filter__module']}>
+      <div className={styles["filter__moduleWrapper"]}>
+
+        <div className={styles["filter__module"]}>
             <div>
                 <IoLocationOutline size={20} />
             </div>
-            <div className={styles['filter__iconBlock']}>
-                <h4 >Location</h4>
-                {city ? <Dropdown buttonName={city} dataSet={cities} city={city} setCity={setCity}/> 
-                       : <Dropdown buttonName="Search" dataSet={cities}  setCity={setCity}/>
-                }                
+            <div className={styles["filter__iconBlock"]}>
+                <h4>Location</h4>
+                {city ? (
+                <Dropdown
+                    buttonName={city}
+                    dataSet={cities}
+                    city={city}
+                    setCity={setCity}
+                />
+                ) : (
+                <Dropdown
+                    buttonName="Search"
+                    dataSet={cities}
+                    setCity={setCity}
+                />
+                )}
             </div>
         </div>
 
-        <div className={styles['filter__module']}>
+        <div className={styles["filter__module"]}>
+          <div>
+            <BsCurrencyDollar size={20} />
+          </div>
+          <div className={styles["filter__iconBlock"]}>
+            <h4>Price</h4>
             <div>
-                <BsCurrencyDollar size={20} />
+              <input
+                placeholder="min"
+                type="number"
+                onChange={(e) => setMinimumPrice(e.target.value)}
+              />
+              <input
+                placeholder="max"
+                type="number"
+                onChange={(e) => setMaximumPrice(e.target.value)}
+              />
             </div>
-            <div>
-                <h4>Price</h4>
-                <div>
-                    <input placeholder="min" type="number"  onChange={(e) =>setMinimumPrice(e.target.value)}/>
-                    <input placeholder="max" type="number"  onChange={(e) =>setMaximumPrice(e.target.value)}/>
-                </div>
-            </div>
+          </div>
         </div>
 
-        <div className={styles['filter__module']}>
-            <div>
-                <BsCalendarDate size={20} />
-            </div>
-            <div>
-                <h4>Date</h4>
-                <h3>Search</h3>
-            </div>
+        <div className={styles["filter__module"]}>
+          <div>
+            <BsCalendarDate size={20} />
+          </div>
+          <div className={styles["filter__iconBlock"]}>
+            <h4>Date</h4>
+            <input
+              type="datetime-local"
+              name="StartingDate"
+              id="sd"
+              onChange={(e) => setStartingDate(e.target.value)}
+            />
+            <input
+              type="datetime-local"
+              name="FinishingDate"
+              id="fd"
+              onChange={(e) => setFinishingDate(e.target.value)}
+            />
+          </div>
         </div>
 
-        <div className={styles['filter__module']}>
-            <div>
-                <ImTree size={20} />
-            </div>
-            <div>
-                <h4>Category</h4>
-                <h3>Select</h3>
-            </div>
+        <div className={styles["filter__module"]}>
+          <div>
+            <ImTree size={20} />
+          </div>
+          <div className={styles["filter__iconBlock"]}>
+            <h4>Categories</h4>
+            {category ? (
+              <Dropdown
+                buttonName={category}
+                dataSet={categories}
+                city={category}
+                setCity={setCategory}
+              />
+            ) : (
+              <Dropdown
+                buttonName="All"
+                dataSet={categories}
+                city={category}
+                setCity={setCategory}
+              />
+            )}
+          </div>
         </div>
-  
-            <Button text="Discover Events"  link={`/discover?city=${city}&min=${minimumPrice}&max=${maximumPrice}`}/>
-      
+
+        <div onClick={handleClick}>
+          <Button
+            text="Discover Events"
+          />
+        </div>
+      </div>
+
+      {show && (
+        <div className={styles["filter__alert"]}>
+          <RiErrorWarningLine size="20" />
+          <h5>Finishing Date cannot be earlier than Starting Date </h5>
+        </div>
+      )}
     </div>
-  )
+  );
 }
 
-export default Filter
+export default Filter;

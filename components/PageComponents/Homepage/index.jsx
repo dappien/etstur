@@ -1,12 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./homepage.module.scss";
 import Image from "next/image";
 import Filter from "./Filter/filter";
 import Events from "./UpcomingEvents";
 import PastEvents from './PastEvents'
 import Categories from "./Categories";
-
-
 
 export default function Homepage({events,upcomingEvents,finishedEvents,continuingEvents}) {
 
@@ -29,9 +27,11 @@ export default function Homepage({events,upcomingEvents,finishedEvents,continuin
             src="https://res.cloudinary.com/droheqpxn/image/upload/v1655606265/etstur/pinkConcert_j7lggp.png"
             width={720}
             height={785}
+            layout="responsive"
+            className={styles['homepage__image']}
           />
         </div>
-        <Filter />
+        <Filter/>
       </div>
       <div className={styles['homepage__body']}>
         <Events events={events} upcomingEvents={upcomingEvents} />
@@ -41,13 +41,9 @@ export default function Homepage({events,upcomingEvents,finishedEvents,continuin
           </div>
           <div>
             <Categories events={events}/>
-         
           </div>
         </div>
       </div>
-     
-    
-
     </div>
   );
 }

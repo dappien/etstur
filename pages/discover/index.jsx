@@ -11,6 +11,9 @@ function Search({events,venues}) {
   const cityQuery = query?.city?.toLowerCase();
   const minimumPriceQuery = parseInt(query?.min);
   const maximumPriceQuery = parseInt(query?.max);
+  const startingDateQuery = parseInt(query?.sd);
+  const finishingDateQuery = parseInt(query?.fd);
+  const categoryQuery = query?.category;
   const eventList = [];
   const venueList = [];
 
@@ -34,6 +37,18 @@ function Search({events,venues}) {
         <h2>cityQuery:{cityQuery}</h2>
         <h2> minimumPriceQuery:{minimumPriceQuery}</h2>
         <h2>maxiumumPriceQuery :{maximumPriceQuery}</h2>
+        <h2>starting date :{startingDateQuery}</h2>
+        <h2> finishing date:{finishingDateQuery}</h2>
+        <h2>category :{categoryQuery}</h2>
+        {/* <iframe
+  width="450"
+  height="250"
+  frameborder="0" style="border:0"
+  referrerpolicy="no-referrer-when-downgrade"
+  src="https://www.google.com/maps/embed/v1/MAP_MODE?key=YOUR_API_KEY&PARAMETERS"
+  allowfullscreen>
+</iframe> */}
+
       </div>
   
     </Page>

@@ -21,7 +21,7 @@ export default function PositionedMenu({buttonName,dataSet,city,setCity}) {
         id="demo-positioned-button"
         aria-controls={open ? 'demo-positioned-menu' : undefined}
         aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
+        aria-expanded={open ? 'true' : 'undefined'}
         onClick={handleClick}
       >
         {buttonName}
@@ -46,7 +46,8 @@ export default function PositionedMenu({buttonName,dataSet,city,setCity}) {
             width: '20ch',
           },
         }}
-      > {dataSet.map((data)=>(
+      > 
+      {dataSet.map((data)=>(
         <MenuItem onClick={()=>handleClose(data)}>{data.city}</MenuItem>
       ))}
       </Menu>

@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './venues.module.scss'
-import VenueCard from '../../Cards/VenueCard/venueCard'
+import VenueCard from '../../Cards/VenueCard'
 function index({venues}) {
   return (
     <div className={styles.venues}>
