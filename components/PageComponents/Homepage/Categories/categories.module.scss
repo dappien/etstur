@@ -16,5 +16,8 @@
     h2{ 
         font-size: 32px;
         margin: 0;
+        @include devices(tablet) {
+            margin-bottom: 10px;
+        }
     }
 }

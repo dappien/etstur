@@ -1,3 +1,4 @@
+@import "../../../styles/constants";
 .footer{
     display: flex;
     align-items: flex-start;
@@ -13,13 +14,30 @@
     padding-left: 10%;
     padding-right: 10%;
     justify-content: space-between;
-
+    @include devices(phone) {
+        padding-left: 5%;
+        padding-right: 5%;
+        height: 180px;
+    }
+    div{
+        h3{
+            margin: 0;
+            font-size: 20px;
+            font-weight: 800;
+            @include devices(phone) {
+               font-size: 16px;
+            }
+        }
+    }
 }
 
 .footer__sitemap{
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include devices(phone) {
+        display: none;
+     }
     div{
         display: flex;
         align-items: center;
@@ -28,6 +46,7 @@
         margin: 0;
         font-size: 20px;
         font-weight: 800;
+       
     }
     h4{
         margin: 5px 0;
@@ -37,13 +56,19 @@
         &:hover{
             text-decoration: underline;
         }
+        @include devices(phone) {
+            font-size: 12px;
+         }
     }
 }
 
 
 .footer__subscriptions{
     input{
-        height: 30px;
+        height: 30px; 
+        @include devices(phone) {
+            display: none;
+         }
     }
     button{
         height: 30px;
@@ -51,9 +76,14 @@
         border: gray;
         cursor: pointer;
         color: white;
+        @include devices(phone) {
+            display: none;
+         }
     }
     div{
         margin-top: 20px;
+        display: flex;
+        align-items: center;
     }
 }
 

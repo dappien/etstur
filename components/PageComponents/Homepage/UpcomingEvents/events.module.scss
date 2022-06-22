@@ -9,6 +9,9 @@
     @include devices(tablet) {
         margin-top: 60px;
     }
+    @include devices(mobile) {
+        padding-bottom: 20px;
+    }
 }
 
 .events__header{
@@ -19,6 +22,9 @@
     h2{
         font-size: 32px;
         margin: 0;
+        @include devices(phone) {
+            font-size: 20px;
+        }
     }
     div{
         display: flex ;
@@ -41,4 +47,8 @@
     @include devices(tablet) {
         grid-template-columns: repeat(2, 1fr);
     }
+    @include devices(phone) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
 }

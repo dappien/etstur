@@ -13,11 +13,12 @@
     @include devices(tablet) {
        margin-left: 2%;
        margin-right: 2%;
-        max-width: 100%;
+       max-width: 100%;
     }
     div{
         display: flex;
         align-items: center;
+
         h2{
             font-size: 20px;
             margin-left: 40px;
@@ -35,6 +36,7 @@
 .navbar__logo{
     cursor: pointer;
 }
+
 
 
 .navbar--fullWidth{
@@ -75,6 +77,9 @@
     border-radius: 50px;
     background-color: rgb(231, 231, 231);
     width: 240px;
+    @include devices(phone) {
+        display: none !important;
+     }
     input{
         border: 0;
         background-color: rgb(231, 231, 231);
@@ -88,4 +93,23 @@
 
 .navbar__searchIcon{
     cursor: pointer;
+}
+
+.navbar__elements{
+    @include devices(phone) {
+        display: none !important;
+     }
+}
+
+.navbarResp{
+  width: 100%;
+  height: 50px;
+    padding: 20px;
+    z-index: 9999;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    justify-content: space-between;
+    
 }

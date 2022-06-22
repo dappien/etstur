@@ -3,8 +3,11 @@ import Image from 'next/image'
 import styles from './navbar.module.scss'
 import Link from 'next/link';
 import { BsSearch } from 'react-icons/bs'
+import useWindowSize from '../../../hooks/useWindowSize'
+import { AiOutlineMenu } from 'react-icons/ai'
 
 function Navbar({style}) {
+  const size = useWindowSize();
   const [inputText,setInputText] = useState("");
   const inputHandler = (e) => {
     const lowerCase = e.target.value.toLowerCase();
@@ -12,8 +15,10 @@ function Navbar({style}) {
   }
 
   return (
+    <>
+    {size.width > 640 && 
     <div className={styles[(style==="fullWidth") ? 'navbar--fullWidth' : 'navbar']}>
-      <div>
+      <div className={styles['navbar__elements']}>
         <Link href="/">
           <Image 
             src="https://res.cloudinary.com/droheqpxn/image/upload/v1655606264/etstur/logo_g04c5g.png"
@@ -24,7 +29,7 @@ function Navbar({style}) {
         </Link>
 
         <Link href="/">
-          <h2>Home</h2>
+          <h2>Home {size.width}</h2>
         </Link>
 
         <Link href="/events">
@@ -47,6 +52,14 @@ function Navbar({style}) {
       </div>
 
     </div>
+    }
+    {size.width < 640 && 
+    <div className={styles['navbarResp']}>
+        <AiOutlineMenu size={30}/>
+        <h2>A</h2>
+    </div>
+    }
+    </>
   )
 }
 
