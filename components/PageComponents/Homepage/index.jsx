@@ -4,7 +4,7 @@ import Image from "next/image";
 import Filter from "./Filter/filter";
 import Events from "./UpcomingEvents";
 import PastEvents from '../Homepage/PastEvents'
-import Categories from "./Categories";
+
 
 export default function Homepage({events,upcomingEvents,finishedEvents,continuingEvents}) {
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from './pastEvents.module.scss'
 import SingleEvent from '../../../Cards/EventCardHorizontal'
 
-function index({finishedEvents,continuingEvents}) {
+function PastEvents({finishedEvents,continuingEvents}) {
   const [show,setShow]=useState(0);
   return (
     <div className={styles['pastEvents']}>
@@ -25,4 +25,4 @@ function index({finishedEvents,continuingEvents}) {
   )
 }
 
-export default index
+export default PastEvents
