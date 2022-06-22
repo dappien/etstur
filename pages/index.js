@@ -1,6 +1,7 @@
 import Page from '../components/Layout/Page'
 import Homepage from '../components/PageComponents/Homepage/index'
-
+import {loadEvents} from '../lib/fetch-events'
+import {loadVenues} from '../lib/fetch-venues'
 export default function Home({events,venues}) {
 
 
@@ -32,18 +33,24 @@ for (let i = 0; i < events.length; i++) {
   )
 }
 
-export const getStaticProps = async () => {
-  const res = await fetch('https://dappien-events-api.herokuapp.com/events');
-  const resVenues = await fetch('https://dappien-events-api.herokuapp.com/venues')
-  const data = await res.json();
-  const dataVenues = await resVenues.json();
-  return {
-    props:{
-      events:data,
-      venues:dataVenues
-    }
-  }
-}
+// export const getStaticProps = async () => {
+//   const res = await fetch('https://dappien-events-api.herokuapp.com/events');
+//   const resVenues = await fetch('https://dappien-events-api.herokuapp.com/venues')
+//   const data = await res.json();
+//   const dataVenues = await resVenues.json();
+//   return {
+//     props:{
+//       events:data,
+//       venues:dataVenues
+//     }
+//   }
+// }
 
+export async function getStaticProps() {
+  const events = await loadEvents()
+  const venues = await loadVenues()
+
+  return { props: { events,venues } }
+}
 //If less than 30 days are left until the event starts, it will be added to the upcoming event section.
 

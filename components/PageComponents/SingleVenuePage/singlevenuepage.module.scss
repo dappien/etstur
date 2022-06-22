@@ -1,3 +1,5 @@
+@import "../../../styles/constants";
+
 .singleVenuePage{
     width: 80%;
     margin-left: 10%;
@@ -5,17 +7,29 @@
     height: 100%;
     min-height: 100vh;
     padding: 50px 0;
-  
+    @include devices(tablet) {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 }
 
 .singleVenuePage--right{
     margin-left: 20px;
     width: 50%;
+    @include devices(tablet) {
+        width: 100%;
+        margin-left: 0;
+    }
     h1{
         margin: 0;
         font-size: 40px;
         padding: 0;
         line-height: 40px;
+        @include devices(tablet) {
+            font-size: 28px;
+            line-height: 28px;
+        }
     }
     h3{
         font-weight: 600;
@@ -29,6 +43,10 @@
 .singleVenuePage--top{
     display: flex;
     align-items: flex-start;
+    flex-direction: row;
+    @include devices(tablet) {
+      flex-direction: column;
+    }
 }
 
 .singleVenuePage__bannerBlock{
@@ -49,6 +67,9 @@
         padding: 10px;
         color: white;
         font-weight: 600;
+        @include devices(tablet) {
+            width: 100%;
+        }
     }
 }
 

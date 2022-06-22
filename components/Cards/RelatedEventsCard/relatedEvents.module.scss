@@ -1,3 +1,4 @@
+@import "../../../styles/constants";
 .relatedEvents{
     width: 80%;
     height: 150px;
@@ -7,12 +8,21 @@
     align-items: flex-start;
     border: 1px solid rgb(180, 180, 180);
     border-bottom: 0.5px solid rgb(180, 180, 180);
+    @include devices(tablet) {
+        width: 100%;
+    }
 }
 
 .relatedEvents__texts{
     h3{
         margin: 0;
         margin-bottom: 7px;
+        @include devices(tablet) {
+            font-size: 16px;
+        }
+        @include devices(phone) {
+            font-size: 12px;
+        }
     }
     div{
         display: flex;
@@ -21,11 +31,17 @@
             font-size: 16px;
             font-weight: 600;
             margin: 0;
+            @include devices(phone) {
+                font-size: 12px;
+            }
         }
         h3{
             font-size: 16px;
             font-weight: 400;
             margin: 0;
+            @include devices(phone) {
+                font-size: 12px;
+            }
         }
     }
     margin-left: 20px;
@@ -46,6 +62,10 @@
         margin-top: 5px;
         &:hover{
             background-color: rgb(57, 103, 255);
+        }
+        @include devices(tablet) {
+            padding: 5px;
+            font-size: 12px;
         }
     }
 }

@@ -5,7 +5,7 @@ import EventCard from '../../Cards/EventCard';
 function index({events,venues}) {
   return (
     <div className={styles['events']}>
-        <h1>Events</h1>
+        <h6>Events</h6>
         <div className={styles['events__grid']}>
         {events.map((event,id)=>(
              <EventCard 

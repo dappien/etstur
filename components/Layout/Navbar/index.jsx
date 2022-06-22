@@ -50,7 +50,7 @@ function Navbar({style}) {
           <h2>Venues</h2>
         </Link>
 
-        <Link href="/venues">
+        <Link href="/artists">
           <h2>Artists</h2>
         </Link>
       </div>

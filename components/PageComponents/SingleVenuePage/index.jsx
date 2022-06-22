@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import styles from './singlevenuepage.module.scss'
 import RelatedEvents from '../../Cards/RelatedEventsCard'
-
+import useWindowSize from '../../../hooks/useWindowSize'
 function index({venues,events}) {
-
+const size = useWindowSize();
 const eventsLists=[]
 const [image,setImage]=useState(0);
 
@@ -23,7 +23,7 @@ for (let i = 0; i < events?.length; i++) {
                     {venues?.[0] && 
                     <Image
                         src={venues?.[0].venueImages[image]}
-                        width={600}
+                        width={ size.width > 1023 ? 600 :740}
                         height={500}
                     />
                     }
@@ -32,14 +32,9 @@ for (let i = 0; i < events?.length; i++) {
             <div className={styles['singleVenuePage--right']}>
                 <h1>{venues?.[0].name}</h1>
                 <h4>{venues?.[0].venueDescription}</h4>
-                <h3>Oturma Düzeni</h3>
-                <Image
-                    src="https://res.cloudinary.com/droheqpxn/image/upload/v1655738415/etstur/oturmaduzeni_lvcvwi.png"
-                    width={400}
-                    height={220}
-                />
             </div>
         </div>
+       
         <div className={styles['singleVenuePage__bannerBlock']}>
             {venues?.[0].venueImages.map((source,id)=>(
                 <div className={styles['singleVenuePage__banner']} onClick={()=>setImage(id)}>

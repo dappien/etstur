@@ -1,6 +1,6 @@
 @import "../../../styles/constants";
 
-.events{
+.discover{
     max-width: 80%;
     margin-left: 10%;
     height: 100%;
@@ -22,8 +22,7 @@
         max-width: 100%;
     }
 }
-
-.events__grid{
+.discover__grid{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 40px;

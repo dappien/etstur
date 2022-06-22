@@ -4,10 +4,10 @@ import Image from 'next/image'
 import Link from 'next/link';
 
 function relatedEvents({event}) {
-  const finishingDate = new Date(event.finishingDate).toLocaleDateString();
-  const finishingHour = new Date(event.finishingDate).toLocaleTimeString();
+  const finishingDate = new Date(event.finishingDate).toDateString();
+  const finishingHour = new Date(event.finishingDate).toTimeString();
   const startingDate = new Date(event.startingDate).toDateString();
-  const startingHour = new Date(event.startingDate).toLocaleTimeString();
+  const startingHour = new Date(event.startingDate).toTimeString();
 
 const eventDateEndMS = new Date(event.finishingDate).getUTCDate();
   return (

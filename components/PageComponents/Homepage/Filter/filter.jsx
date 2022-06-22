@@ -14,8 +14,8 @@ import useWindowSize  from '../../../../hooks/useWindowSize'
 
 function Filter() {
   const size = useWindowSize();
-  const [city, setCity] = useState("İstanbul");
-  const [category, setCategory] = useState("All");
+  const [city, setCity] = useState("istanbul");
+  const [category, setCategory] = useState("sport");
   const [minimumPrice, setMinimumPrice] = useState(0);
   const [maximumPrice, setMaximumPrice] = useState(5000);
   const [startingDate, setStartingDate] = useState(0);

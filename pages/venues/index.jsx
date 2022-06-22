@@ -13,17 +13,6 @@ function index({venues}) {
 
 export default index
 
-// export const getStaticProps = async () => {
-//     const res = await fetch('https://dappien-events-api.herokuapp.com/events');
-//     const resVenues = await fetch('https://dappien-events-api.herokuapp.com/venues')
-//     const data = await res.json();
-//     const dataVenues = await resVenues.json();
-//     return {
-//       props:{
-//         venues:dataVenues
-//       }
-//     }
-//   }
 
   export async function getStaticProps() {
     const events = await loadEvents()
