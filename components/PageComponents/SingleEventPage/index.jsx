@@ -24,7 +24,6 @@ function truncate(string,n){
     <div className={styles.singleVenuePage}>
         <div className={styles['singleVenuePage--top']}>
             <div className={styles['singleVenuePage--left']}>
-                {/* <h3>{events?.[0].city}</h3> */}
                 <div>
                   
                 {events?.[0] && 
@@ -39,6 +38,9 @@ function truncate(string,n){
             </div>
             <div className={styles['singleVenuePage--right']}>
                 <h1>{events?.[0].title}</h1>
+                {events?.[0].artists.map((artist)=>(
+                    <h4 className={styles['singleVenuePage__artist']}>{artist}</h4>
+                ))}
                 <h4>{events?.[0].description}</h4>
                 <h3>Etkinlik Bilgileri</h3>
                 <div className={styles['singleVenuePage--event']}>
@@ -60,22 +62,28 @@ function truncate(string,n){
                 </div>
             </div>
         </div>
+
+
         <div className={styles['singleVenuePage__headlines']}>
             <h2 className={section==0 && styles['active']} onClick={()=>setSection(0)}>Konum Bilgileri</h2>
             <h2 className={section==1 && styles['active']} onClick={()=>setSection(1)}>Oturma Planı</h2>
             <h2 className={section==2 && styles['active']} onClick={()=>setSection(2)}>Kurallar</h2>
         </div>
         {section===0  &&  <iframe src={venuesList?.[0].location} width="600" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>}
-        {section===1  &&  <iframe src={venuesList?.[0].location} width="600" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>}
-        {
-            section===2 &&
+        {section===1 &&
             <div>
                 <SeatingPlan1 ticketPrices={events?.[0].ticketPrices}  setTicketPrices={setTicketPrices}/>
-                <h2>{ticketPrices}</h2>
+                <h2 className={styles['singleVenuePage__price']}>{ticketPrices} TL</h2>
             </div>
         }
-      
-     
+        {section===2  &&  
+            <div>
+                {events?.[0].rules.map((rule)=>(
+                    <h2 className={styles['singleVenuePage__rule']}>-{rule}</h2>
+                ))}
+            </div>
+         }
+
     </div>
   )
 }
