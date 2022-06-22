@@ -6,7 +6,6 @@ import SingleVenuePage from '../../components/PageComponents/SingleVenuePage'
 function SingleVenue({venues,events}) {
   const router = useRouter();
   const { url } = router.query;
-  console.log(venues?.[0].city)
  
   return (
     <Page style="fullWidth">
@@ -18,15 +17,18 @@ function SingleVenue({venues,events}) {
 export default SingleVenue
 
 export async function getStaticPaths() {
-  return {
-    paths: [
-      // String variant:
-      '/venues/first-venue',
-      // Object variant:
-      { params: { url: 'second-venue' } },
-    ],
-    fallback: true,
-  }
+  // Call an external API endpoint to get posts
+  const res = await fetch('https://dappien-events-api.herokuapp.com/venues')
+  const posts = await res.json()
+
+  // Get the paths we want to pre-render based on posts
+  const paths = posts.map((post) => ({
+    params: { url: post.venueCode }, // post.slug could be /blog/nature/hike1
+  }))
+
+  // We'll pre-render only these paths at build time.
+  // { fallback: false } means other routes should 404.
+  return { paths, fallback: false }
 }
 
 export const getStaticProps = async ({params}) => {

@@ -3,7 +3,7 @@ import { MdArrowForwardIos } from 'react-icons/md'
 import styles from './singleEvent.module.scss'
 import Link from 'next/link'
 
-function singleEvent({event}) {
+function SingleEvent({event}) {
   const eventDate = new Date(event.startingDate).toDateString();
   const result = eventDate.trim().split(/\s+/);
 
@@ -32,4 +32,4 @@ function singleEvent({event}) {
   )
 }
 
-export default singleEvent
+export default SingleEvent

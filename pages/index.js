@@ -1,5 +1,5 @@
 import Page from '../components/Layout/Page'
-import Homepage from '../components/PageComponents/Homepage'
+import Homepage from '../components/PageComponents/Homepage/index'
 
 export default function Home({events,venues}) {
 
