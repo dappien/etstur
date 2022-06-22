@@ -7,7 +7,7 @@ function PastEvents({finishedEvents,continuingEvents}) {
   return (
     <div className={styles['pastEvents']}>
         <div className={styles['pastEvents__header']}>
-            <h2 onClick={()=>setShow(0)} className={(show===0) && styles.borderActive}>GEÇMİŞ</h2>
+            <h2 onClick={()=>setShow(0)} className={(show===0) && styles.borderActive}>GEÇMİŞ ETKİNLİKLER</h2>
             <h2 onClick={()=>setShow(1)} className={(show===1) && styles.borderActive}>DEVAM EDENLER</h2>
         </div>
         <div>

@@ -3,7 +3,7 @@ import styles from "./homepage.module.scss";
 import Image from "next/image";
 import Filter from "./Filter/filter";
 import Events from "./UpcomingEvents";
-import PastEvents from './PastEvents'
+import PastEvents from './finishedevents'
 import Categories from './Categories'
 
 export default function Homepage({events,upcomingEvents,finishedEvents,continuingEvents}) {
