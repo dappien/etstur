@@ -1,14 +1,16 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
   images: {
     domains: [
       'res.cloudinary.com',
       'ipfs.infura.io',
-      'flagcdn.com',
-      'fakestoreapi.com'
+      'flagcdn.com'
     ],
 },
+eslint: {
+  ignoreDuringBuilds: true,
+},
+future: { 
+  webpack5: true 
 }
-
-module.exports = nextConfig
+}

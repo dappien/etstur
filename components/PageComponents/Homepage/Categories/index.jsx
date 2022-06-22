@@ -20,7 +20,7 @@ function Categories({events}) {
       <h2>Sports</h2>           
         <div className={styles['categories__block']}>
             <Category event={sports[0]}/>
-            <Category event={theatres[0]}/>
+            <Category event={sports[1]}/>
         </div>
         <h2>Theatre</h2>
         <div className={styles['categories__block']}>
