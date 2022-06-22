@@ -1,0 +1,100 @@
+.parent{
+    display: flex;
+    align-items: flex-start;
+}
+
+
+.block{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+.div1{
+    width: 100px;
+    height: 200px;
+    background-color: #E30613;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s;
+    &:hover{
+        background-color: #c50b18;
+    }
+}
+
+.div2{
+    width: 100px;
+    height: 100px;
+    background-color: #E30613;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s;
+    &:hover{
+        background-color: #c50b18;
+    }
+}
+
+.div3{
+    width: 200px;
+    height: 100px;
+    background-color: #1f5c74;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.div4{
+    width: 200px;
+    height: 200px;
+    background-color: #E30613;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s;
+    &:hover{
+        background-color: #c50b18;
+    }
+}
+
+.div5{
+    width: 100px;
+    height: 200px;
+    background-color: #E30613;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s;
+    &:hover{
+        background-color: #c50b18;
+    }
+}
+
+.div6{
+    width: 100px;
+    height: 100px;
+    background-color: #E30613;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s;
+    &:hover{
+        background-color: #c50b18;
+    }
+}
+
+.text{
+    font-size: 16px;
+    color: white;
+}
