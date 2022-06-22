@@ -3,8 +3,11 @@ import Image from 'next/image'
 import styles from './singleEvents.module.scss'
 import Link from 'next/link'
 import SeatingPlan1 from '../../seatingPlans/seatingPlan1'
+import useWindowSize from '../../../hooks/useWindowSize'
+
 
 function index({events,venues}) {
+const size = useWindowSize();
 const month = new Date(events?.[0].startingDate).toString();
 const result = month.trim().split(/\s+/);
 const venuesList=[];
@@ -29,7 +32,7 @@ function truncate(string,n){
                 {events?.[0] && 
                     <Image
                         src={events?.[0].banner}
-                        width={600}
+                        width={size.width > 1024 ? 600 : 730}
                         height={500}
                     />
                     }
