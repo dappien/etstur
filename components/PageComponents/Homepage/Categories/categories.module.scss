@@ -1,3 +1,5 @@
+@import "../../../../styles/constants";
+
 .categories__block{
     display: flex;
     align-items: center;
@@ -7,6 +9,10 @@
 
 .categories{
    margin-left: 50px;
+   @include devices(tablet) {
+    margin-left: 0;
+    margin-top: 60px;
+    }
     h2{ 
         font-size: 32px;
         margin: 0;

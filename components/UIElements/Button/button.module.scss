@@ -1,3 +1,4 @@
+@import "../../../styles/constants";
 .button{
     padding: 10px 20px ;
     background-color: #FA639D;
@@ -9,6 +10,9 @@
     transition: all 0.4s;
     &:hover{
         background-color: #d33371;
+    }
+    @include devices(tablet) {
+        font-size: 12px;
     }
 }
 

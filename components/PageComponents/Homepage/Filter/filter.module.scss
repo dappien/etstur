@@ -1,3 +1,5 @@
+@import "../../../../styles/constants";
+
 .filter{
     width: 1360px;
     height: auto;
@@ -12,7 +14,9 @@
     -webkit-backdrop-filter: blur( 1px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-
+    @include devices(tablet) {
+        width: 100%;
+    }
 }
 
 .filter__module{
@@ -27,6 +31,11 @@
             font-size: 20px;
             font-weight: 800;
             line-height: 20px;
+            @include devices(tablet) {
+                font-size: 12px;
+                font-weight: 800;
+                line-height: 12px;
+            }
         }
         h3{
             margin: 0;
@@ -34,6 +43,11 @@
             font-weight: 400;
             border-radius: 15px;
             color: rgb(141, 141, 141);
+            @include devices(tablet) {
+                font-size: 12px;
+                font-weight: 800;
+                line-height: 12px;
+            }
         }
         div{
             display: flex;
@@ -43,6 +57,11 @@
                 width: 60px;
                 height: 30px;
                 margin-right: 10px;
+                @include devices(tablet) {
+                    width: 30px;
+                    font-weight: 800;
+                    line-height: 12px;
+                }
             }
             
         }

@@ -10,6 +10,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include devices(tablet) {
+       margin-left: 2%;
+       margin-right: 2%;
+        max-width: 100%;
+    }
     div{
         display: flex;
         align-items: center;

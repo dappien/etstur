@@ -10,8 +10,10 @@ import { cities } from "../../../UIElements/Dropdown/cities";
 import { categories } from "../../../UIElements/Dropdown/categories";
 import { useRouter } from "next/router";
 import { RiErrorWarningLine } from "react-icons/ri";
+import useWindowSize  from '../../../../hooks/useWindowSize'
 
 function Filter() {
+  const size = useWindowSize();
   const [city, setCity] = useState("İstanbul");
   const [category, setCategory] = useState("All");
   const [minimumPrice, setMinimumPrice] = useState(0);
@@ -37,7 +39,7 @@ function Filter() {
 
         <div className={styles["filter__module"]}>
             <div>
-                <IoLocationOutline size={20} />
+                <IoLocationOutline size={size.width > 996 ? 20 : 12} />
             </div>
             <div className={styles["filter__iconBlock"]}>
                 <h4>Location</h4>
@@ -60,7 +62,7 @@ function Filter() {
 
         <div className={styles["filter__module"]}>
           <div>
-            <BsCurrencyDollar size={20} />
+            <BsCurrencyDollar size={size.width > 996 ? 20 : 12} />
           </div>
           <div className={styles["filter__iconBlock"]}>
             <h4>Price</h4>
@@ -81,7 +83,7 @@ function Filter() {
 
         <div className={styles["filter__module"]}>
           <div>
-            <BsCalendarDate size={20} />
+            <BsCalendarDate size={size.width > 996 ? 20 : 12} />
           </div>
           <div className={styles["filter__iconBlock"]}>
             <h4>Date</h4>
@@ -102,7 +104,7 @@ function Filter() {
 
         <div className={styles["filter__module"]}>
           <div>
-            <ImTree size={20} />
+            <ImTree size={size.width > 996 ? 20 : 12} />
           </div>
           <div className={styles["filter__iconBlock"]}>
             <h4>Categories</h4>
@@ -133,7 +135,7 @@ function Filter() {
 
       {show && (
         <div className={styles["filter__alert"]}>
-          <RiErrorWarningLine size="20" />
+          <RiErrorWarningLine size={size.width > 996 ? 20 : 12} />
           <h5>Finishing Date cannot be earlier than Starting Date </h5>
         </div>
       )}
