@@ -18,10 +18,9 @@ function index() {
 
       <div className={styles['footer__sitemap']}>
         <h3>Sitemap</h3>
-        <h4>Homee</h4>
+        <h4>Home</h4>
         <h4>Venues</h4>
         <h4>Events</h4>
-        <h4>Artists</h4>
         <div>
           <AiOutlineCopyrightCircle size="20"/>
           <h5>Copyright 2022</h5>

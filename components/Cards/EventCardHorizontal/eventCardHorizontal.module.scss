@@ -1,4 +1,4 @@
-.singleEvent{
+.eventCardHorizontal{
     display: flex;
     align-items: center;
     width: 100%;
@@ -8,7 +8,7 @@
     cursor: pointer;
 }
 
-.singleEvent_dateNumber{
+.eventCardHorizontal_dateNumber{
     flex: 0.8 1 0 !important;
     display: flex;
     justify-content: center;
@@ -19,7 +19,7 @@
     }
 }
 
-.singleEvent__dates{
+.eventCardHorizontal__dates{
     flex: 0.8 1 0 !important;
     display: flex;
     align-items: center;
@@ -32,7 +32,7 @@
     }
 }
 
-.singleEvent__concert{
+.eventCardHorizontal__concert{
     flex:4 1 0 !important;
     display: flex;
     align-items: flex-start;
@@ -50,7 +50,7 @@
     }
 }
 
-.singleEvent__Icon{
+.eventCardHorizontal__Icon{
     flex:1 1 0;
     display: flex;
     align-items: center;

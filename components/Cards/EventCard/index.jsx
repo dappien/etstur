@@ -8,8 +8,6 @@ const start = Date.now();
 const json = new Date(startingDate).toDateString();
 const ft = new Date(finishingDate).getTime();
 
-
-
 const result = json.trim().split(/\s+/);
 
   return (

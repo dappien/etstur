@@ -5,10 +5,12 @@ import Link from 'next/link';
 import { BsSearch } from 'react-icons/bs'
 import useWindowSize from '../../../hooks/useWindowSize'
 import { AiOutlineMenu } from 'react-icons/ai'
+import HamburgerMenu from '../HamburgerMenu'
 
 function Navbar({style}) {
   const size = useWindowSize();
   const [inputText,setInputText] = useState("");
+  const [show,setShow]=useState(false);
   const inputHandler = (e) => {
     const lowerCase = e.target.value.toLowerCase();
     setInputText(lowerCase);
@@ -50,9 +52,7 @@ function Navbar({style}) {
           <h2>Venues</h2>
         </Link>
 
-        <Link href="/artists">
-          <h2>Artists</h2>
-        </Link>
+  
       </div>
       <div className={styles['navbar__searchBar']}>
         <input type="text"  placeholder='Search...' onChange={inputHandler}/>
@@ -65,10 +65,16 @@ function Navbar({style}) {
     }
     {size.width < 640 && 
     <div className={styles['navbarResp']}>
-        <AiOutlineMenu size={30}/>
-        <h2>A</h2>
+        <AiOutlineMenu size={30} onClick={()=>setShow(prevCheck => !prevCheck)}/>
+        <Image 
+            src="https://res.cloudinary.com/droheqpxn/image/upload/v1655606264/etstur/logo_g04c5g.png"
+            width={40}
+            height={40}
+            className={styles['navbar__logo']}
+        />  
     </div>
     }
+    {show && <HamburgerMenu/>}
     </>
   )
 }
